@@ -1,0 +1,8 @@
+[package]
+name = "passwords"
+version = "0.1.0"
+authors = ["gareth"]
+
+[dependencies]
+clap = "2.26.2"
+rand = "0.3.14"
