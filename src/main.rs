@@ -46,7 +46,7 @@ fn main() {
 }
 
 fn get_filename() -> String {
-    match env::var("PASSWORDS_DICT_FILE") {
+    match env::var("GENPASS_WORD_FILE") {
         Ok(file) => return file.to_string(),
         Err(_) => return "/usr/share/dict/words".to_string(),
     }
@@ -69,5 +69,5 @@ fn generate_password(words: Vec<String>, num_words: u32, separator: &str) -> Str
         let idx = rand::thread_rng().gen_range(0, words.len());
         password_vec.push(words[idx].clone());
     }
-    return password_vec.join(separator);
+    return password_vec.join(separator).to_lowercase();
 }
